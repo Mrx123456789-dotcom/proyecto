@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>El secreto del chocolate</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #fff0e8;
+            font-family: Arial, sans-serif;
+            color: #713b35;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 480px;
+            background: #fffaf6;
+            padding: 35px 25px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(113, 59, 53, 0.12);
+        }
+
+        .chocolate {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 21px;
+            line-height: 1.4;
+        }
+
+        p {
+            color: #805c55;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .pregunta {
+            margin-top: 30px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: #d77c69;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        button:hover {
+            background: #bd6655;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        #resultado {
+            display: none;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ecd9d0;
+            animation: aparecer 0.6s ease;
+        }
+
+        #resultado h2 {
+            color: #d77c69;
+            font-size: 25px;
+        }
+
+        .pingüino {
+            font-size: 55px;
+            margin: 15px 0;
+        }
+
+        .final {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 380px) {
+            .contenedor {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <div class="chocolate">🍫</div>
+
+        <h1>¡ENHORABUENA!</h1>
+
+        <h2>
+            Has encontrado el contenido secreto del chocolate.
+        </h2>
+
+        <p>
+            Espero que hayas disfrutado de la experiencia
+            de desenvolver un producto de cacao para encontrarte
+            con una página web.
+        </p>
+
+        <section class="pregunta">
+
+            <h2>
+                Ahora, una pregunta importante:
+            </h2>
+
+            <p>
+                ¿Esperabas algo más después de un chocolate?
+            </p>
+
+            <div class="botones">
+                <button onclick="mostrarSorpresa()">Sí</button>
+                <button onclick="mostrarSorpresa()">No</button>
+            </div>
+
+            <p style="font-size: 12px;">
+                Tu respuesta será ignorada con muchísimo respeto.
+            </p>
+
+        </section>
+
+        <section id="resultado">
+
+            <div style="font-size: 45px;">🎉</div>
+
+            <h2>¡SORPRESA!</h2>
+
+            <h2>No has ganado absolutamente nada.</h2>
+
+            <p>
+                Pero ahora tienes una página web que demuestra
+                que alguien dedicó tiempo a hacerte perder
+                unos segundos de tu vida.
+            </p>
+
+            <hr style="border: 0; border-top: 1px solid #ecd9d0;">
+
+            <h2>Un último dato importante:</h2>
+
+            <div class="pingüino">🐧</div>
+
+            <p>
+                Los pingüinos no tienen rodillas visibles.
+            </p>
+            <p>
+                Y aunque ellos tienen bastante estilo, tu les ganas por goleada.
+            </p>
+
+            <p class="final">
+                De nada. Ya puedes continuar con tu día.
+            </p>
+
+            <p style="font-size: 13px;">
+                Fin de la transmisión.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script>
+        function mostrarSorpresa() {
+            const resultado = document.getElementById("resultado");
+
+            resultado.style.display = "block";
+
+            document.querySelector(".pregunta").style.display = "none";
+
+            resultado.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+    </script>
+
+</body>
+</html>
